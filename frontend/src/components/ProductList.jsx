@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getProducts, deleteProduct } from "../services/api";
 
-const ProductList = ({ onEdit }) => {
+const ProductList = ({ onEdit, refresh }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [refresh]); // Add refresh as a dependency
 
   const fetchProducts = async () => {
     try {

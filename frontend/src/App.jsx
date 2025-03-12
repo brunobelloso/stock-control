@@ -8,7 +8,7 @@ const App = () => {
 
   const handleSuccess = () => {
     setRefresh(!refresh);
-    setEditProduct(null); // Limpiar el formulario después de crear producto
+    setEditProduct(null); // Clear the edit product after success
   };
 
   const handleEdit = (product) => {
@@ -16,14 +16,14 @@ const App = () => {
   };
 
   const handleClose = () => {
-    setEditProduct(null); // Limpiar el formulario al cerrar
+    setEditProduct(null); // Clear the edit product when closing
   };
 
   return (
     <div>
-      <h1>Control de Stock</h1>
+      <h1>Control Stock</h1>
       <ProductFormWrapper product={editProduct} onSuccess={handleSuccess} onClose={handleClose} />
-      <ProductList onEdit={handleEdit} />
+      <ProductList onEdit={handleEdit} refresh={refresh} />
     </div>
   );
 };
