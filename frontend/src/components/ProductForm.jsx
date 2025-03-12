@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { createProduct, updateProduct } from "../services/api";
+import "./ProductForm.css";
 
 const ProductForm = ({ product, onSuccess, onClose }) => {
   const [formData, setFormData] = useState({
@@ -37,7 +38,6 @@ const ProductForm = ({ product, onSuccess, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData); // Log form data
     try {
       if (product) {
         await updateProduct(product._id, formData);
@@ -110,8 +110,8 @@ const ProductForm = ({ product, onSuccess, onClose }) => {
         onChange={handleChange}
         required
       />
-      <button type="submit">{product ? "Update" : "Create"}</button>
-      {product && <button type="button" onClick={handleClose}>Close</button>}
+      <button type="submit" className="submit-button">{product ? "Update" : "Create"}</button>
+      {product && <button type="button" className="close-button" onClick={handleClose}>Close</button>}
     </form>
   );
 };

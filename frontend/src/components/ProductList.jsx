@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getProducts, deleteProduct } from "../services/api";
+import "./ProductList.css";
 
 const ProductList = ({ onEdit, refresh }) => {
   const [products, setProducts] = useState([]);
@@ -31,17 +32,33 @@ const ProductList = ({ onEdit, refresh }) => {
   };
 
   return (
-    <div>
+    <div className="product-list">
       <h2>Product List</h2>
-      <ul>
-        {products.map((product) => (
-          <li key={product._id}>
-            {product.name} - ${product.price} - {product.category} - Stock: {product.stock}
-            <button onClick={() => handleEdit(product)}>Edit</button>
-            <button onClick={() => handleDelete(product._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product._id}>
+              <td>{product.name}</td>
+              <td>${product.price}</td>
+              <td>{product.category}</td>
+              <td>{product.stock}</td>
+              <td>
+                <button className="edit-button" onClick={() => handleEdit(product)}>Edit</button>
+                <button className="delete-button" onClick={() => handleDelete(product._id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

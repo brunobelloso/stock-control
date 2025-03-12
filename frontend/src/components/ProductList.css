@@ -1,0 +1,36 @@
+.product-list {
+  margin: 20px;
+}
+
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-list th, .product-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.product-list th {
+  background-color: #f2f2f2;
+  color: black;
+  text-align: left;
+}
+
+.product-list .edit-button, .product-list .delete-button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.product-list .edit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.product-list .delete-button {
+  background-color: #f44336;
+  color: white;
+}
