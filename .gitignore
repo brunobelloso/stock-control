@@ -1,0 +1,40 @@
+# Ignorar node_modules (dependencias de Node.js)
+node_modules/
+
+# Ignorar archivos de entorno (pueden contener información sensible)
+.env
+.env.local
+.env.development
+.env.production
+
+# Ignorar archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos de build de React
+dist/
+build/
+
+# Ignorar archivos de Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Ignorar archivos de caché de Vite
+.cache/
+
+# Ignorar archivos de dependencias de frontend (Vite)
+frontend/node_modules/
+
+# Ignorar archivos de dependencias de backend (Express.js)
+backend/node_modules/
+
+# Ignorar archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración de Git
+.git/
